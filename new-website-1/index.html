@@ -8,54 +8,51 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icon/favicon.ico">
 </head>
 <body>
     <!-- Add this right after the opening body tag -->
 <canvas id="heartCanvas"></canvas>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
+    <!-- Add this navigation bar before the container div -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="icon/android-chrome-512x512.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
                 New Website 1
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="About.html">About</a>
+                        <a class="nav-link active" href="About.html"><i class="fas fa-info-circle"></i> About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                        <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="services.html"><i class="fas fa-microchip"></i> services</a>
                     </li>
                 </ul>
-                <form class="d-flex ms-3">
-                    <input class="form-control me-2" type="search" placeholder="Search website..." id="search-input">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
-    <!-- Add this right after the navbar -->
-<div class="settings-menu">
-    <button class="btn btn-valentine" id="toggleSettings">
-        <i class="fas fa-cog"></i>
-    </button>
-    <div class="settings-panel" id="settingsPanel">
-        <h5>Display Settings</h5>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="particleToggle" checked>
-            <label class="form-check-label" for="particleToggle">Heart Particles</label>
+    <div class="settings-menu">
+        <button class="btn btn-valentine" id="toggleSettings">
+            <i class="fas fa-cog"></i>
+        </button>
+        <div class="settings-panel" id="settingsPanel">
+            <h5>Display Settings</h5>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="particleToggle" checked>
+                <label class="form-check-label" for="particleToggle">Heart Particles</label>
+            </div>
         </div>
     </div>
-</div>
     <div class="hero-section">
         <div class="container">
             <h1>Welcome to New Website 1</h1>
@@ -129,10 +126,21 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </main>
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center text-light">
+            <p>&copy; 2025 New Website 1. All rights reserved.</p>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">BETA REMINDER (IMPORTANT)</h5>
+                    <p class="card-text">this website is in beta please expect frequent updates and shutdowns!</p>
+                </div>
+            </div>
             <div class="col-md-7 mb-7">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">new features added every Update</h5>
+                        <h5 class="card-title">FEATURES ADDED (CHANGELOG TABLE)</h5>
                         <p class="card-text">New features added every holiday and update!</p>
                     </div>
                 </div>
@@ -152,35 +160,13 @@
                                     <td>1.0</td>
                                     <td>Initial Release</td>
                                 </tr>
+                                <tr>
+                                    <td>1.1.0</td>
+                                    <td>Initial Release,new page, <a href="About.html">About</a>, new updates, new navigation menu on the home page, Contact Page, and bug fixes!</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>            
-        </div>
-    </main>
-
-    <footer class="bg-dark text-light py-4">
-        <div class="container text-center">
-            <p>&copy; 2025 New Website 1. All rights reserved.</p>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">footer card 1</h5>
-                    <p class="card-text">this website is in beta please expect frequent updates and shutdowns!</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Changelog</h5>
-                    <p class="card-text">added:
-                        <ul>
-                            <li>valentines theme</li>
-                            <li>added three different pages buttons below:</li>
-                        </ul>
-                    </p>   
-                    <button class="btn btn-outline-dark" onclick="window.location.href='About.html'">About</button>     
-                    <button class="btn btn-outline-dark" onclick="window.location.href='services.html'">Services</button>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='contact.html'">Contact</button>           
                 </div>
             </div>
         </div>

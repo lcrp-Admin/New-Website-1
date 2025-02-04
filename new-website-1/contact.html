@@ -8,36 +8,35 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="icon/favicon.ico">
 
 </head>
 <body>
     <!-- Add this right after opening body tag -->
 <canvas id="heartCanvas"></canvas>
-
-<!-- Rest of your HTML remains the same, just update the colors and text -->
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Add this navigation bar before the container div -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="icon/android-chrome-512x512.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
                 New Website 1
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="About.html">About</a>
+                        <a class="nav-link active" href="About.html"><i class="fas fa-info-circle"></i> About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
+                        <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="services.html"><i class="fas fa-microchip"></i> services</a>
                     </li>
                 </ul>
             </div>
