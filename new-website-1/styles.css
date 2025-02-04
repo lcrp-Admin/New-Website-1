@@ -117,3 +117,80 @@ footer {
     margin-top: auto;
 }
 
+/* Valentine's Theme Colors */
+:root {
+    --valentine-primary: #FF69B4;
+    --valentine-secondary: #FFB6C1;
+    --valentine-dark: #C71585;
+    --valentine-light: #FFF0F5;
+}
+
+body {
+    background: linear-gradient(135deg, var(--valentine-secondary), var(--valentine-primary));
+    min-height: 100vh;
+}
+
+/* Heart Particles Canvas */
+#heartCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Settings Menu */
+.settings-menu {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.btn-valentine {
+    background-color: var(--valentine-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.settings-panel {
+    display: none;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    margin-top: 10px;
+}
+
+/* Valentine's themed components */
+.navbar {
+    background: var(--valentine-dark) !important;
+}
+
+.card {
+    border-color: var(--valentine-primary);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.btn-primary {
+    background-color: var(--valentine-primary);
+    border-color: var(--valentine-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--valentine-dark);
+    border-color: var(--valentine-dark);
+}
+
+.hero-section {
+    color: var(--valentine-dark);
+}
+
+footer {
+    background: var(--valentine-dark) !important;
+}

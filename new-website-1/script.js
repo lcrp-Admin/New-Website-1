@@ -1,3 +1,96 @@
+// Heart Particles System
+class HeartParticle {
+    constructor(canvas) {
+        this.canvas = canvas;
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 15 + 5;
+        this.speedX = Math.random() * 3 - 1.5;
+        this.speedY = Math.random() * 3 - 1.5;
+        this.color = `rgba(255, ${Math.random() * 105 + 150}, ${Math.random() * 105 + 150}, 0.7)`;
+    }
+
+    draw(ctx) {
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        const topCurveHeight = this.size * 0.3;
+        ctx.bezierCurveTo(
+            this.x - this.size/2, this.y - topCurveHeight,
+            this.x - this.size, this.y + this.size/3,
+            this.x, this.y + this.size
+        );
+        ctx.bezierCurveTo(
+            this.x + this.size, this.y + this.size/3,
+            this.x + this.size/2, this.y - topCurveHeight,
+            this.x, this.y
+        );
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x > this.canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > this.canvas.height || this.y < 0) this.speedY *= -1;
+    }
+}
+
+// Initialize particles system
+const canvas = document.getElementById('heartCanvas');
+const ctx = canvas.getContext('2d');
+let hearts = [];
+let isParticlesEnabled = true;
+
+function initCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    hearts = [];
+    for (let i = 0; i < 50; i++) {
+        hearts.push(new HeartParticle(canvas));
+    }
+}
+
+function animate() {
+    if (!isParticlesEnabled) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+    }
+    
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    hearts.forEach(heart => {
+        heart.update();
+        heart.draw(ctx);
+    });
+    requestAnimationFrame(animate);
+}
+
+// Settings Panel
+const toggleSettings = document.getElementById('toggleSettings');
+const settingsPanel = document.getElementById('settingsPanel');
+const particleToggle = document.getElementById('particleToggle');
+
+toggleSettings.addEventListener('click', () => {
+    settingsPanel.style.display = settingsPanel.style.display === 'none' ? 'block' : 'none';
+});
+
+particleToggle.addEventListener('change', (e) => {
+    isParticlesEnabled = e.target.checked;
+    if (isParticlesEnabled) {
+        animate();
+    }
+});
+
+// Initialize
+window.addEventListener('resize', initCanvas);
+initCanvas();
+animate();
+
+// Keep your existing JavaScript code below this
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
