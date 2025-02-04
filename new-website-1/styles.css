@@ -1,0 +1,119 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    border-radius: 50%;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.card input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+  
+  .card input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+  }
+  
+  .card input::placeholder {
+    color: #999;
+  }
+
+  .about-me {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.5;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.about-me:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.25);
+}
+
+.input-section {
+    padding: 20px;
+}
+
+.input-section .btn-primary {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.Card-Container {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.post {
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+footer {
+    margin-top: auto;
+}
+
