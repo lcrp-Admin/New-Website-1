@@ -20,6 +20,9 @@ body {
     gap: 40px;
 }
 
+.navbar-brand img {
+    border-radius: 50%;
+}
 .contact-wrapper {
     background: white;
     padding: 40px;
@@ -216,4 +219,23 @@ input:focus, textarea:focus {
     .container {
         padding: 1rem;
     }
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
