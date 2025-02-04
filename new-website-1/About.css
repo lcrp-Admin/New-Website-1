@@ -1,52 +1,8 @@
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #FFB6C1, #FF69B4);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.error-page {
-    min-height: 100vh;
-}
-
-.error-content {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-.error-number {
-    font-size: 150px;
-    font-weight: bold;
-    color: #3498db;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 0;
-    animation: numberFloat 3s ease-in-out infinite;
-}
-
-.error-title {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin: 20px 0;
-}
-
-.error-description {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    margin-bottom: 30px;
-}
-
-.error-actions .btn {
-    padding: 12px 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: transform 0.3s ease;
-}
-
-.error-actions .btn:hover {
-    transform: translateY(-3px);
-}
 
 .search-container {
     max-width: 400px;
@@ -59,82 +15,57 @@ body {
     border: 2px solid #3498db;
 }
 
-@keyframes numberFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+.about-section {
+    padding: 60px 0;
 }
 
-/* Glitch effect */
-.error-number[data-value]:hover {
-    position: relative;
-    animation: glitch 1s linear infinite;
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-@keyframes glitch {
-    2%, 64% {
-        transform: translate(2px, 0) skew(0deg);
-    }
-    4%, 60% {
-        transform: translate(-2px, 0) skew(0deg);
-    }
-    62% {
-        transform: translate(0, 0) skew(5deg);
-    }
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .error-number {
-        font-size: 100px;
-    }
-    
-    .error-title {
-        font-size: 2rem;
-    }
-    
-    .error-actions .btn {
-        margin: 10px 0;
-    }
+.team-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
 }
 
-/* Update these color values in your existing CSS */
-body {
-    background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+.company-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
 }
 
-.error-content {
-    background: rgba(255, 255, 255, 0.95);
-    border: 2px solid #FF69B4;
+.card {
+    border: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
-.error-number {
-    color: #FF1493;
+.card h2 {
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.error-title {
-    color: #C71585;
+.team-member h3 {
+    color: #333;
+    margin: 10px 0;
 }
 
-.btn-primary {
-    background-color: #FF69B4;
-    border-color: #FF69B4;
+.team-member p {
+    color: #666;
 }
 
-.btn-primary:hover {
-    background-color: #FF1493;
-    border-color: #FF1493;
-}
-
-.btn-outline-primary {
-    color: #FF69B4;
-    border-color: #FF69B4;
-}
-
-.btn-outline-primary:hover {
-    background-color: #FF69B4;
-    border-color: #FF69B4;
+.fas {
+    margin-right: 10px;
+    color: #007bff;
 }

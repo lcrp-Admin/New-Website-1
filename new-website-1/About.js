@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Create canvas for heart particles
+    // Canvas setup for heart particles
     const canvas = document.createElement('canvas');
     canvas.style.position = 'fixed';
     canvas.style.top = '0';
@@ -8,15 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
     canvas.style.height = '100%';
     canvas.style.zIndex = '-1';
     document.body.appendChild(canvas);
-    
+
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Heart particles array
     let hearts = [];
 
-    // Heart class
     class Heart {
         constructor() {
             this.x = Math.random() * canvas.width;
@@ -54,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Create initial hearts
+    // Initialize hearts
     for (let i = 0; i < 50; i++) {
         hearts.push(new Heart());
     }
@@ -76,23 +74,33 @@ document.addEventListener('DOMContentLoaded', function() {
         canvas.height = window.innerHeight;
     });
 
-    // Your existing code with Valentine's colors
-    const keys = [];
-    const konamiCode = ['1'];
+    // Team member animations
+    const teamMembers = document.querySelectorAll('.team-member');
     
-    document.addEventListener('keydown', function(e) {
-        keys.push(e.key);
-        keys = keys.slice(-10);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    teamMembers.forEach(member => {
+        member.style.opacity = 0;
+        member.style.transform = 'translateY(20px)';
+        member.style.transition = 'all 0.5s ease-in-out';
+        observer.observe(member);
         
-        if (JSON.stringify(keys) === JSON.stringify(konamiCode)) {
-            document.body.style.background = 'linear-gradient(45deg, #FF69B4, #FFB6C1)';
-            errorNumber.style.transform = 'rotate(360deg)';
-            errorNumber.style.transition = 'transform 1s ease';
-            
-            // Create heart burst effect
-            for (let i = 0; i < 20; i++) {
+        member.addEventListener('click', function() {
+            this.classList.add('pulse');
+            // Create heart burst effect on click
+            for (let i = 0; i < 10; i++) {
                 hearts.push(new Heart());
             }
-        }
+            setTimeout(() => {
+                this.classList.remove('pulse');
+            }, 1000);
+        });
     });
 });
